@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1 Your Message
+  p= content
+  form(action=`/messages/${url}/delete`, method='POST')
+    button(type='submit') Self-Destruct
+  a(href='/') Back to Form
