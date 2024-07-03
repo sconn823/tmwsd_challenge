@@ -16,9 +16,16 @@ if (!fs.existsSync(messagesDir)) {
   fs.mkdirSync(messagesDir);
 }
 
-// Route to display the form
+// Route to display the form and list of messages
 app.get('/', (req, res) => {
-  res.render('form');
+  const files = fs.readdirSync(messagesDir);
+  const messages = files.map(file => {
+    const url = path.basename(file, '.json');
+    const filePath = path.join(messagesDir, file);
+    const content = JSON.parse(fs.readFileSync(filePath, 'utf8')).content;
+    return { url, content };
+  });
+  res.render('form', { messages });
 });
 
 // Route to handle form submissions

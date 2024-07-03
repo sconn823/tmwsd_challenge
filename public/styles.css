@@ -61,3 +61,28 @@ h1 {
 p {
   padding: 10px 20px;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+ul li a {
+  display: block;
+  padding: 10px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #007BFF;
+  color: white;
+}
