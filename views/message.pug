@@ -2,6 +2,7 @@ extends layout
 
 block content
   h1 Your Message
+  div
   p= content
   form(action=`/messages/${url}/delete`, method='POST')
     button(type='submit') Self-Destruct
